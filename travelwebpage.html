@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>travelpage</title>
+    <style>
+
+        
+        *{ 
+            padding: 0; 
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        nav{
+            background:#0082e6 ;
+            height: 80px;
+            width: 100%;   
+            position: sticky; top: 0;
+
+        }
+        label.logo{
+            color: white;
+            font-size:35px ;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
+        nav ul{
+            float:right;
+            margin-right: 20px;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 80px;
+            margin:0 5px;
+        }
+        nav a{
+            color: white;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px ;
+            text-transform: uppercase;
+        }
+       .background-video{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        background-size: cover;
+       }
+
+      
+       a.active,a:hover {
+        background: #05273e;
+        transition: .3s;
+       }  
+
+/* services CSS part */
+
+       .services {
+        padding: 50px;
+        text-align: center;
+        background-color: #f9f9f9;
+    }
+
+    .services h2 {
+        font-size: 2.5rem;
+        color: #060606;
+        margin-bottom: 30px;
+    }
+
+    .service-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .service {
+        background: #41b9f1;
+        padding: 20px;
+        border-radius: 10px;
+        width: 250px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        color: #f9fafc;
+    }
+
+    .service i,
+    .service img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+        color: #f9fafc;
+    }
+
+    .service h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .service p {
+        font-size: 1rem;
+        color: #555;
+    }
+ /* GALLERY CSS */
+
+   /* Page container */
+   .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+ header {
+            text-align: center;
+            padding: 20px;
+            color: #007acc;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+    .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: calc(33.333% - 10px);
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Upload Section */
+        .upload-section {
+            background-color: #007acc;
+            color: #fff;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .upload-section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .upload-section p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .upload-section input[type="file"] {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #005a99;
+            color: #fff;
+        }
+
+        /* Quotes Section */
+        .quotes {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f0f9ff;
+            border-left: 5px solid #007acc;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        .quotes p {
+            margin-bottom: 15px;
+        }
+
+        /* FEEDBACK SECTION CSS*/
+.feedback-container {
+  background-color: #ffffff;
+  width: 60%;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading */
+h2 {
+  color: #007bff;
+  font-size: 2em;
+}
+
+/* Rating Section */
+.rating-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.rating label {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.rating select {
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+  margin-top: 10px;
+}
+
+/* Improvement Section */
+.improvement-section {
+  margin-top: 30px;
+  text-align: left;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-top: 10px;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1em;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* BOOKING SECTION */
+
+body {
+            font-family: Arial, sans-serif;
+            background-color: #fbfcfe; /* Light blue background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Booking section styles */
+        .booking-section {
+            background-image: url('your-image.jpg'); /* Add a travel-themed background */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .booking-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0082e6; /* Dark blue background with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 51, 0.2); /* Darker shadow */
+        }
+
+        .booking-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:white; /* Light blue for the heading */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color:white; /* Light blue for labels */
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group input[type="mobile-number"]
+        ,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: px;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        .form-group select {
+            color: #003366;
+        }
+
+        .form-group input[type="submit"] {
+            background-color:green; /* Blue submit button */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: darkgreen; /* Darker blue on hover */
+        }
+
+
+        /* FOOTER-SECTION */
+
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #0082e6; /* Deep Blue */
+    color: #FFFFFF;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin:10px;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    color: #F3F4F6; /* Light Blue */
+    margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    font-size: 14px;
+    color: #D1D5DB; /* Soft Gray */
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #93C5FD; /* Lighter Blue */
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #1E3A8A; /* Deep Blue */
+    color: #9CA3AF; /* Muted Gray */
+    font-size: 14px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <label class="logo"></i>Aao Chale</label>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#">CONTACT US</a></li>
+            <li><a href="#feedback">FEEDBACK</a></li>
+            <li><a href="#booking"> BOOKING</a></li>
+        </ul>
+    </nav>
+
+
+   
+    <video class="background-video" autoplay loop muted>
+        <source src="./vdo/view.mp4" type="video/mp4">
+    </video>
+</header>
+
+<!-- SERVICESS PART-->
+
+<section class="services"id="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+        <div class="service">
+            <h3>Bike Booking</h3>
+            <p>Find and book the best flights at competitive prices.</p>
+        </div>
+        <div class="service">
+            <img src="hotel-icon.jpg" alt="Hotel Booking">
+            <h3>Tent House</h3>
+            <p>Choose from a wide selection of top-rated hotels worldwide.</p>
+        </div>
+        <div class="service">
+            <img src="tour-icon.jpg" alt="Tour Packages">
+            <h3>Tour Packages</h3>
+            <p>Explore curated travel packages tailored to your interests.</p>
+        </div>
+        <div class="service">
+            <img src="car-icon.jpg" alt="Car Rentals">
+            <h3>Car Rentals</h3>
+            <p>Convenient car rental options for a smooth journey.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY SECTION -->
+
+<section class="gallery" id="gallery">
+<div class="container">
+    <header 1>
+        <h1>Travel Memories Gallery</h1>
+        <p>Relive your favorite travel moments and explore others' adventures!</p>
+    </header>
+    <div class="gallery">
+        <img src="./img/New folder/20231129_134911.jpg" alt="Travel Memory 1">
+        <img src="./img/New folder/IMG_20240726_125300848.jpg" alt="Travel Memory 2">
+        <img src="./img/New folder/IMG20240726114050.jpg" alt="Travel Memory 3">
+        <img src="./img/New folder/Screenshot 2024-11-10 122306.png" alt="Travel Memory 4">
+        <img src="./img/New folder/IMG_20240726_123409604.jpg" alt="Travel Memory 5">
+        <img src="./img/New folder/Screenshot 2024-11-10 122247.png" alt="Travel Memory 6">
+        <!-- Add more images -->
+    </div>
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+        <h2>Share Your Travel Memories</h2>
+        <p>Upload your photos and let others see the amazing places you've visited!</p>
+        <input type="file" accept="image/*">
+    </div>
+
+    <!-- Quotes Section -->
+    <div class="quotes">
+        <p>"Travel far enough, you meet yourself." – David Mitchell</p>
+        <p>"The world is a book, and those who do not travel read only one page." – Saint Augustine</p>
+        <p>"To travel is to live." – Hans Christian Andersen</p>
+    </div>
+</div>
+</section>
+
+<!-- FEEDBACK SECTION -->
+
+<section class="feedback" id="feedback">
+<div class="feedback-container">
+    <h2>We Value Your Feedback</h2>
+    <p>Please share your thoughts about our services. Your input helps us improve.</p>
+    
+    <!-- Rating Section -->
+    <div class="rating-section">
+      <h3>Rate Your Experience:</h3>
+      <div class="rating">
+        <label for="rating">Rating (1 to 5):</label>
+        <select id="rating" name="rating">
+          <option value="1">1 - Poor</option>
+          <option value="2">2 - Fair</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- How to Improve Section -->
+    <div class="improvement-section">
+      <h3>How Can We Improve Our Service?</h3>
+      <textarea id="improvement" name="improvement" rows="4" placeholder="Tell us what we can do better..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Submit Feedback</button>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+
+<section class="booking" id="booking">
+    <div class="booking-container">
+        <h2>Book Your Trip</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Required Fields -->
+            <input type="hidden" name="access_key" value="76533471-0241-4c66-8918-c2a49749937b">
+
+            <!-- Destination -->
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" name="destination" placeholder="Enter your destination" required>
+            </div>
+
+            <!-- Check-in and Check-out dates -->
+            <div class="form-group">
+                <label for="checkin">Check-in Date</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group">
+                <label for="checkout">Check-out Date</label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+
+            <!-- Number of guests -->
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests" name="guests" min="1" max="20" placeholder="1" required>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile-number">Contact-Number</label>
+                <input type="mobile-number" id="mobile-number" name="mobile-number" placeholder="Enter your mobile number" required>
+            </div>
+
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Book Now">
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER SECTION -->
+
+<footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Your travel companion for unforgettable journeys. We help you discover, plan, and book your next adventure with ease.</p>
+            </div>
+
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: info@aaochale.com</p>
+                <p>Phone: +91 8260193649</p>
+               
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Travel Website | Designed by Trinath Singh
+        </div>
+    </footer>
+</body>
+</html>
